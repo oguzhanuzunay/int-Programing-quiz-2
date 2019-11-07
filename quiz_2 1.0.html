@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    
+</body>
+<script>
+var Container=document.createElement("div");
+document.body.appendChild(Container);
+var Header=document.createElement("div");
+Container.appendChild(Header);
+var body1=document.createElement("div");
+Container.appendChild(body1)
+var inp1=document.createElement("input");
+inp1.placeholder="Enter To words"
+var inp2=document.createElement("input");
+inp2.placeholder="Delete this word"
+body1.appendChild(inp1);
+body1.appendChild(inp2);
+var btn=document.createElement("button");
+btn.textContent="Enter"
+body1.appendChild(btn);
+
+inp1.style.position="relative";
+inp1.style.margin="20px"
+inp1.value="";
+
+inp2.style.position="relative";
+inp2.style.margin="20px"
+inp2.value="";
+
+btn.style.position="relative";
+btn.style.margin="20px"
+
+
+btn.addEventListener("click",function() {
+    let sentece= inp1.value;
+    let word=inp2.value; 
+    var SenWords2=[]; 
+
+    let SenWords=sentece.split(" ");
+
+
+    for(i=0;i<SenWords.length;i++){        
+        if(SenWords[i].search(word)!==-1){
+         
+           delete SenWords[i]
+            }
+        }
+
+        for (let i = 0; i < SenWords.length; i++) {
+let g=0;
+
+if(typeof SenWords[i]!="undefined"){
+    console.log(SenWords[i])
+    SenWords2.push(SenWords[i]);
+    console.log(SenWords2)
+}
+
+}
+
+    
+
+
+
+
+})
+
+
+</script>
+</html>
